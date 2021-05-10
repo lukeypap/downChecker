@@ -15,20 +15,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import io.luke.downchecker.model.Url;
 
 @Controller
-@RequestMapping("/check")
+@RequestMapping("/")
 public class UrlController {
 
     private final String SITE_UP = "siteUp";
     private final String SITE_DOWN = "siteDown";
     private final String INCORRECT_URL = "urlIncorrect";
 
-    @GetMapping
+    @GetMapping("/")
     public String getCheckPage(Model model) {
         model.addAttribute("url", new Url());
         return "check";
     }
 
-    @PostMapping
+    @PostMapping("/check")
     public String postUrl(@ModelAttribute("Url") Url url) {
         String message = "";
         String urlText = url.getUrlText();
