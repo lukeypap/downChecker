@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="style.css" rel="stylesheet">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Check</title>
+</head>
+
+<body>
+
+    <div>
+        <h1 class="title"><i>downChecker</i></h1>
+        <section class="todoapp">
+            <div>
+                <header class="header">
+                    <form th:action="@{/check}" th:object="${url}" method="POST">
+                        <input
+                        type="text"
+                        class="new-todo"
+                        autofocus  
+                        autocomplete="off" 
+                        placeholder="Type URL here"
+                        th:field="*{urlText}"
+                        />
+                    </form>
+                </header>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
